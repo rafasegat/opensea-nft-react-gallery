@@ -1,11 +1,14 @@
 {
-  "name": "nft-gallery",
-  "version": "1.0.0",
-  "description": "NFT Gallery with filtering, sorting and other features.",
+  "name": "@rafasegat/opensea-nft-react-gallery",
+  "version": "1.0.2",
+  "description": "Opensea NFT React Gallery with filtering, sorting and other features.",
   "scripts": {
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/rafasegat"
   },
   "author": "Rafael Segat",
   "license": "ISC",
@@ -22,6 +25,7 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.4.20",
     "@storybook/testing-library": "0.0.9",
+    "@types/node": "^17.0.23",
     "@types/react": "^17.0.43",
     "babel-loader": "^8.2.4",
     "css-loader": "^5.2.7",
@@ -31,7 +35,9 @@
     "react-dom": "^17.0.0",
     "rollup": "^2.70.1",
     "rollup-plugin-dts": "^4.2.0",
-    "sass": "^1.49.11",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "^2.6.1",
+    "sass": "^1.50.0",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
     "tslib": "^2.3.1",

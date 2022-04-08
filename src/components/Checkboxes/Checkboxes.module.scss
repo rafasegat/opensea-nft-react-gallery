@@ -15,17 +15,26 @@
 }
 
 .label {
-  display: block;
+  display: flex;
+  align-items: center;
+  width: 100%;
   cursor: pointer;
   font-size: 0.85rem;
+  text-transform: capitalize;
   span {
     margin-left: 5px;
+  }
+  &:hover {
+    input {
+      border-color: #000000;
+    }
   }
 }
 
 .input {
   width: 1rem;
   height: 1rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   border-color: #d4d4d4;
+  cursor: pointer;
 }
