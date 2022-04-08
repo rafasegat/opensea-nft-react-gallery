@@ -1,5 +1,5 @@
 {
-  "name": "gallery",
+  "name": "nft-gallery",
   "version": "1.0.0",
   "description": "NFT Gallery with filtering, sorting and other features.",
   "scripts": {
