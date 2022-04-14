@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../contexts/GlobalContext';
 import styles from './Filters.module.scss';
 
 type TypeProps = {
-  traits: any;
+  traits: TypeCollectionTrait;
 };
 
 const Filters = ({ traits }: TypeProps) => {
@@ -19,33 +19,51 @@ const Filters = ({ traits }: TypeProps) => {
       {isLoading ? (
         'Loading filters...'
       ) : (
-        <div className={styles['list-accordion']}>
-          {Object.entries(traits).map(([name, traits]: [string, any]) => (
-            <Accordion
-              key={name}
-              title={name}
-              count={Object.entries(traits).length}
-            >
-              {Boolean(Object.entries(traits).length) && (
-                <Checkboxes
-                  id={`${name}-${Object.entries(traits).length}`}
-                  value={filter}
-                  options={Object.entries(traits).map(
-                    ([itemName, itemCount]) => ({
-                      value: `trait_${name}_${itemName}_${itemCount}`,
-                      label: `${itemName} (${itemCount})`
-                    })
+        <>
+          <div className={styles['list-accordion']}>
+            {Object.entries(traits).map(
+              ([trait_type, traits]: [string, any]) => (
+                <Accordion
+                  key={trait_type}
+                  title={trait_type}
+                  count={Object.entries(traits).length}
+                >
+                  {Boolean(Object.entries(traits).length) && (
+                    <Checkboxes
+                      id={`${trait_type}-${Object.entries(traits).length}`}
+                      value={filter}
+                      options={Object.entries(traits).map(([value, count]) => ({
+                        value: JSON.stringify({
+                          trait_type,
+                          value,
+                          count
+                        }),
+                        label: `${value} (${count})`
+                      }))}
+                      onChange={(value) => {
+                        globalDispatch({
+                          filter: value
+                        });
+                      }}
+                    />
                   )}
-                  onChange={(value) => {
-                    globalDispatch({
-                      filter: value
-                    });
-                  }}
-                />
-              )}
-            </Accordion>
-          ))}
-        </div>
+                </Accordion>
+              )
+            )}
+          </div>
+          {Boolean(filter.length) && (
+            <div>
+              <h4>Filters selected:</h4>
+              <ul className={styles['filters-selected-list']}>
+                {filter.map(({ value, label }) => {
+                  const parsed = JSON.parse(value);
+                  const labelF = `${parsed.trait_type.toUpperCase()} ${label} `;
+                  return <li>{labelF}</li>;
+                })}
+              </ul>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

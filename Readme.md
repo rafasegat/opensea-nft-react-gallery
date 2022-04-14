@@ -2,23 +2,21 @@
 
 The goal of this project is to allow user insert a NFT name and automatically display a gallery with cool features such as filtering, sorting, etc etc.
 
-## Setup
+## How to use
+
+First of all, run `npm run generate COLLECTION_SLUG` to generate dataset json file to fetch NFT collection. Then check public/data/collection-nft.json
+
+We need to run this script because OpenSea API do not allow to retrieve more than 50 assets per request, so we will need to jave a local file.
 
 `npm install nft-gallery`
-
-## How to use
 
 ```
 import NFTGallery from "nft-gallery"
 
 function Example() {
-  return <NFTGallery api-key="my-opensea-apykey" collection="my-collection" />
+  return <NFTGallery opensea-collection="my-collection" />
 }
 ```
-
-### Request a OpenSea API Key
-
-You can do it here <a href="https://docs.opensea.io/reference/request-an-api-key" target="_blank">OpenSea API Request Form</a>
 
 ### Develop
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const options = { method: 'GET' };
 
-export const useFetchCollection = (collectionSlug: string) => {
+export const useFetchNFTCollection = () => {
   const [data, setData] = useState<{
     result: any;
     status: 'loading' | 'error' | 'done';
@@ -14,7 +14,7 @@ export const useFetchCollection = (collectionSlug: string) => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetch(
-        `https://api.opensea.io/api/v1/collection/${collectionSlug}`,
+        'https://raw.githubusercontent.com/rafasegat/crypto-whale-watcher-frontend/main/public/nft-collection.json',
         options
       );
       const json = await result.json();
