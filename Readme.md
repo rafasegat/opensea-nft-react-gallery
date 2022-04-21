@@ -4,6 +4,10 @@ The goal of this project is to allow user insert a NFT name and automatically di
 
 ## How to use
 
+First of all, run `npm run generate COLLECTION_SLUG` to generate dataset json file to fetch NFT collection. Then check public/data/collection-nft.json
+
+We need to run this script because OpenSea API do not allow to retrieve more than 50 assets per request, so we will need to jave a local file.
+
 `npm install nft-gallery`
 
 ```

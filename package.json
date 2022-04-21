@@ -5,7 +5,8 @@
   "scripts": {
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "generate": "node scripts/generateNFT.js"
   },
   "author": "Rafael Segat",
   "license": "ISC",
@@ -44,6 +45,7 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
-    "classnames": "^2.3.1"
+    "classnames": "^2.3.1",
+    "node-fetch": "^2.0.0"
   }
 }

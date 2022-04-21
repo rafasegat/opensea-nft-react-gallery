@@ -6,8 +6,8 @@ const GridSkeleton = () => {
   return (
     <div>
       <ul className={styles.list}>
-        {[...Array(25)].map((item) => (
-          <li key={item} className={styles['list-item']}>
+        {[...Array(25)].map((item, index) => (
+          <li key={index} className={styles['list-item']}>
             <div className={styles['list-item-wrapper']}>
               <div className={styles['image']}>
                 <SkeletonRect height="100%" marginBottom="10px" />
