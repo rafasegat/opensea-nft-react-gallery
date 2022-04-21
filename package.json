@@ -1,12 +1,15 @@
 {
-  "name": "gallery",
-  "version": "1.0.0",
-  "description": "NFT Gallery with filtering, sorting and other features.",
+  "name": "@rafasegat/opensea-nft-react-gallery",
+  "version": "1.0.3",
+  "description": "Opensea NFT React Gallery with filtering, sorting and other features.",
   "scripts": {
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "generate": "node scripts/generateNFT.js"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/rafasegat"
   },
   "author": "Rafael Segat",
   "license": "ISC",
