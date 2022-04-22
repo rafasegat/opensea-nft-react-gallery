@@ -1,6 +1,6 @@
 /// <reference types="react" />
 declare type TypeProps = {
-    traits: TypeCollectionTrait;
+    collection: TypeCollection;
 };
-declare const Filters: ({ traits }: TypeProps) => JSX.Element;
+declare const Filters: ({ collection }: TypeProps) => JSX.Element;
 export default Filters;

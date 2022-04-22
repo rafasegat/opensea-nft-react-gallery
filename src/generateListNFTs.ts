@@ -36,6 +36,8 @@ export const generateListNFTs = async () => {
 
   const collectionData = await fetchCollectionData();
 
+  console.log(collectionData);
+
   const concatAssets = async (collectionTotalSupply: number) => {
     let dataAcc: any[] = [];
     let nextPage = '';
@@ -59,14 +61,15 @@ export const generateListNFTs = async () => {
     return dataAcc;
   };
 
-  const { traits } = collectionData.collection;
+  const { collection } = collectionData;
+  const { name, slug, traits } = collection;
   const { total_supply } = collectionData.collection.stats;
 
   console.log(`Generating NFT collection of ${total_supply} items...`);
 
-  const assets = await concatAssets(200); //collectionTotalSupply);
+  const assets = await concatAssets(total_supply); //collectionTotalSupply);
 
-  const finalData = { traits, assets };
+  const finalData = { name, slug, traits, assets };
 
   console.log(
     'Here we go, copy this dataset and copy to public/data/list-assets,json'

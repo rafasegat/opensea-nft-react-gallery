@@ -1,16 +1,52 @@
+
+@import "../../assets/styles/variables.scss";
+
 .component {
   width: 25%;
   height: 100vh;
   overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
 }
 
 .filters-selected-list {
   margin: 0;
-  padding: 0 0 0 15px;
+  padding: 0 0 0 1rem;
+}
+
+// Skeleton
+.component-skeleton {
+  width: 100%;;
+}
+
+.list-skeleton {
+  list-style: none;
+  padding: 0; 
+  margin: 0;
+  
+}
+
+.list-item-skeleton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid $grey100;
+  border-top: 1px solid $grey100;
 }
 
 @media only screen and (max-width: 765px) {
   .component {
     width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
   }
 }

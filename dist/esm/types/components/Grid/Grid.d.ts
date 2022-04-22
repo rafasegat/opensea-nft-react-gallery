@@ -1,6 +1,6 @@
 /// <reference types="react" />
 declare type TypeProps = {
-    assets: TypeCollectionAsset[];
+    collection: TypeCollection;
 };
-declare const Grid: ({ assets }: TypeProps) => JSX.Element;
+declare const Grid: ({ collection }: TypeProps) => JSX.Element;
 export default Grid;

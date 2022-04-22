@@ -1,0 +1,10 @@
+.component {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 765px) {
+  .component {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,52 @@
+
+
+.accordion {
+  border-bottom: 1px solid #0000001a;
+  border-top: 1px solid #0000001a;
+}
+
+.accordion-title {
+  margin: 0;
+  padding: 0;
+}
+
+.count {
+  background: #e5e5e5;
+  border-radius: 10px;
+  margin-left: 5px;
+  font-style: italic;
+}
+
+.accordion-title-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: none;
+  width: 100%;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  &:hover {
+    background: #0000001a
+  }
+}
+
+.expandable-element {
+  padding: 0 12px;
+}
+
+.is-expanded {
+  .expandable-element {
+    display: block;
+  }
+}
+
+.is-collapsed {
+  .expandable-element {
+    display: none;
+  }
+}

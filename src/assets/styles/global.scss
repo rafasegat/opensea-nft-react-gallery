@@ -1,0 +1,9 @@
+.blink-me {
+  animation: blinker 1s ease-in-out 1;
+}
+
+@keyframes blinker {
+  1% {
+    opacity: 0;
+  }
+}

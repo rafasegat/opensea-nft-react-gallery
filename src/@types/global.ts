@@ -5,6 +5,8 @@ declare global {
   };
 
   type TypeCollection = {
+    name: string;
+    slug: string;
     traits: TypeCollectionTrait[];
     assets: TypeCollectionAsset[];
   };

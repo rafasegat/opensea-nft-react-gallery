@@ -1,23 +1,26 @@
 import React from 'react';
 import Accordion from '../Accordion/Accordion';
 import Checkboxes from '../Checkboxes/Checkboxes';
+import FiltersSkeleton from './Filters.skeleton';
 import { useGlobalContext } from '../../contexts/GlobalContext';
 import styles from './Filters.module.scss';
 
 type TypeProps = {
-  traits: TypeCollectionTrait;
+  collection: TypeCollection;
 };
 
-const Filters = ({ traits }: TypeProps) => {
+const Filters = ({ collection }: TypeProps) => {
   const { globalState, globalDispatch } = useGlobalContext();
   const { isLoading } = globalState;
   const { filter } = globalState;
 
+  const { traits } = collection;
+
   return (
     <div className={styles.component}>
-      <h2>Filters</h2>
+      <h2 className={styles.title}>Filters</h2>
       {isLoading ? (
-        'Loading filters...'
+        <FiltersSkeleton />
       ) : (
         <>
           <div className={styles['list-accordion']}>
@@ -42,8 +45,12 @@ const Filters = ({ traits }: TypeProps) => {
                       }))}
                       onChange={(value) => {
                         globalDispatch({
-                          filter: value
+                          type: 'setFilter',
+                          payload: value
                         });
+                        // globalDispatch({
+                        //   filter: value
+                        // });
                       }}
                     />
                   )}
@@ -51,18 +58,6 @@ const Filters = ({ traits }: TypeProps) => {
               )
             )}
           </div>
-          {Boolean(filter.length) && (
-            <div>
-              <h4>Filters selected:</h4>
-              <ul className={styles['filters-selected-list']}>
-                {filter.map(({ value, label }) => {
-                  const parsed = JSON.parse(value);
-                  const labelF = `${parsed.trait_type.toUpperCase()} ${label} `;
-                  return <li>{labelF}</li>;
-                })}
-              </ul>
-            </div>
-          )}
         </>
       )}
     </div>

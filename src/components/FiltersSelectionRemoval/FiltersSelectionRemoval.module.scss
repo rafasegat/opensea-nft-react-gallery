@@ -1,0 +1,54 @@
+@import "../../assets/styles/variables.scss";
+
+.component {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-flex;
+  margin-right: 0.75rem;
+}
+
+.list-item {
+  margin-left: 0.5rem;
+}
+
+.title {
+  font-size: 0.75rem;
+  letter-spacing: 0.75px;
+  margin: 0;
+  opacity: .4;
+  white-space: nowrap;
+}
+
+.btn-item { 
+  display: flex;
+  align-items: center;
+  font-size: .75rem;
+  background: none;
+  border: 2px solid $grey100;
+  border-radius: 1rem;
+  color: $black;
+  padding: 0.25rem 0.5rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;;
+  cursor: pointer;
+  svg {
+    width: 8px;
+    height: 8px;
+    display: flex;
+    margin-left: 0.25rem;
+  }
+  &:hover {
+    background: $grey100;
+  }
+}
