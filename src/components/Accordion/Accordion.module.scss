@@ -1,4 +1,4 @@
-@import "../../assets/styles/variables.scss";
+@import '../../assets/styles/variables.scss';
 
 .accordion {
   border-bottom: 1px solid $grey100;
@@ -21,6 +21,7 @@
   display: flex;
   justify-content: space-between;
   padding: 15px;
+  font-size: 1rem;
   background: none;
   width: 100%;
   box-shadow: none;

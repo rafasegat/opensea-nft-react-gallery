@@ -1,6 +1,3 @@
-import { useFetchCollection } from './hooks/useFetchCollection/useFetchCollection';
-import React, { useEffect, useState } from 'react';
-
 const options = {
   method: 'GET',
   headers: {
@@ -32,11 +29,7 @@ const fetchCollectionData = async () => {
 };
 
 export const generateListNFTs = async () => {
-  // const { status, result } = useFetchCollection(COLLECTION_SLUG);
-
   const collectionData = await fetchCollectionData();
-
-  console.log(collectionData);
 
   const concatAssets = async (collectionTotalSupply: number) => {
     let dataAcc: any[] = [];
@@ -67,7 +60,7 @@ export const generateListNFTs = async () => {
 
   console.log(`Generating NFT collection of ${total_supply} items...`);
 
-  const assets = await concatAssets(total_supply); //collectionTotalSupply);
+  const assets = await concatAssets(100); //collectionTotalSupply);
 
   const finalData = { name, slug, traits, assets };
 

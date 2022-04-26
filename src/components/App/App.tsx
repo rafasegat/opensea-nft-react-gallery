@@ -14,8 +14,8 @@ export interface AppProps {
 
 // Generate this list and copy/paste into
 // the file public/assets/data/nft-collection.json
-// import { generateListNFTs } from '../../generateListNFTs';
-// generateListNFTs();
+import { generateListNFTs } from '../../generateListNFTs';
+generateListNFTs();
 
 const App = ({ url }: AppProps) => {
   const { globalState, globalDispatch } = useGlobalContext();

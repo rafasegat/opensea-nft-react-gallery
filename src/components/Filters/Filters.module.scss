@@ -1,5 +1,4 @@
-
-@import "../../assets/styles/variables.scss";
+@import '../../assets/styles/variables.scss';
 
 .component {
   width: 25%;
@@ -12,7 +11,7 @@
 .title {
   font-size: 2rem;
   line-height: 2.5rem;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
   text-transform: uppercase;
 }
 
@@ -23,14 +22,13 @@
 
 // Skeleton
 .component-skeleton {
-  width: 100%;;
+  width: 100%;
 }
 
 .list-skeleton {
   list-style: none;
-  padding: 0; 
+  padding: 0;
   margin: 0;
-  
 }
 
 .list-item-skeleton {
