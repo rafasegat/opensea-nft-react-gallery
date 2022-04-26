@@ -45,12 +45,8 @@ const Filters = ({ collection }: TypeProps) => {
                       }))}
                       onChange={(value) => {
                         globalDispatch({
-                          type: 'setFilter',
-                          payload: value
+                          filter: value
                         });
-                        // globalDispatch({
-                        //   filter: value
-                        // });
                       }}
                     />
                   )}

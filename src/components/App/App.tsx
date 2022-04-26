@@ -23,16 +23,11 @@ const App = ({ url }: AppProps) => {
   const { status, result: collection } = useFetchNFTCollection();
 
   useEffect(() => {
-    if (status === 'done' && isLoading) {
+    if (status === 'done' && isLoading)
       globalDispatch({
-        type: 'setIsLoading',
-        payload: false
+        isLoading: false
       });
-    }
   }, [status, isLoading]);
-  // globalDispatch({
-  //   isLoading: false
-  // });
 
   return (
     <div className={styles.component}>
@@ -44,7 +39,7 @@ const App = ({ url }: AppProps) => {
 
 // const AppWrapped = ({ url }: AppProps) => (
 const AppWrapped = () => (
-  <GlobalProvider>cscs{/* <App url="fvdfvdfvdfvd" /> */}</GlobalProvider>
+  <GlobalProvider>{<App url="fvdfvdfvdfvd" />}</GlobalProvider>
 );
 
 export default AppWrapped;

@@ -21,12 +21,8 @@ const FiltersSelectionRemoval = () => {
                   className={styles['btn-item']}
                   onClick={() => {
                     globalDispatch({
-                      type: 'setFilter',
-                      payload: filter.filter((f) => f.value !== value)
+                      filter: filter.filter((f) => f.value !== value)
                     });
-                    // globalDispatch({
-                    //   filter: filter.filter((f) => f.value !== value)
-                    // });
                   }}
                 >
                   <span>{labelF}</span>

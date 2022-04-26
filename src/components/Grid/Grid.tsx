@@ -75,12 +75,8 @@ const Grid = ({ collection }: TypeProps) => {
           <Button
             onClick={() => {
               globalDispatch({
-                type: 'setFilter',
-                payload: []
+                filter: []
               });
-              // globalDispatch({
-              //   filter: []
-              // });
             }}
           >
             <span>RESET</span>

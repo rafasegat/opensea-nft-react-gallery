@@ -10,6 +10,7 @@
 
 # production
 /build
+/dist
 
 # misc
 /src/pages
@@ -18,6 +19,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.storybook
 
 npm-debug.log*
 yarn-debug.log*
