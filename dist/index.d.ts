@@ -1,4 +1,4 @@
 /// <reference types="react" />
-declare const App: () => JSX.Element;
+declare const AppWrapped: () => JSX.Element;
 
-export { App as NFTGallery };
+export { AppWrapped as OpenSeaNFTReactGallery };

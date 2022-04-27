@@ -1,6 +1,3 @@
-import { useFetchCollection } from './hooks/useFetchCollection/useFetchCollection';
-import React, { useEffect, useState } from 'react';
-
 const options = {
   method: 'GET',
   headers: {
@@ -32,8 +29,6 @@ const fetchCollectionData = async () => {
 };
 
 export const generateListNFTs = async () => {
-  // const { status, result } = useFetchCollection(COLLECTION_SLUG);
-
   const collectionData = await fetchCollectionData();
 
   const concatAssets = async (collectionTotalSupply: number) => {
@@ -59,14 +54,15 @@ export const generateListNFTs = async () => {
     return dataAcc;
   };
 
-  const { traits } = collectionData.collection;
+  const { collection } = collectionData;
+  const { name, slug, traits } = collection;
   const { total_supply } = collectionData.collection.stats;
 
   console.log(`Generating NFT collection of ${total_supply} items...`);
 
-  const assets = await concatAssets(200); //collectionTotalSupply);
+  const assets = await concatAssets(100); //collectionTotalSupply);
 
-  const finalData = { traits, assets };
+  const finalData = { name, slug, traits, assets };
 
   console.log(
     'Here we go, copy this dataset and copy to public/data/list-assets,json'

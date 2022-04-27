@@ -1,10 +1,4 @@
-import React, {
-  FC,
-  createContext,
-  useContext,
-  useReducer,
-  Reducer
-} from 'react';
+import React, { createContext, Reducer, useContext, useReducer } from 'react';
 
 type GlobalContextState = {
   isLoading: boolean;
@@ -20,7 +14,7 @@ export const GlobalContext = createContext<
   [GlobalContextState, (value: Partial<GlobalContextState>) => void]
 >([initialState, () => {}]);
 
-export const GlobalProvider: FC = ({ children }) => {
+export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer<
     Reducer<GlobalContextState, Partial<GlobalContextState>>
   >((prevState, newState) => ({ ...prevState, ...newState }), initialState);

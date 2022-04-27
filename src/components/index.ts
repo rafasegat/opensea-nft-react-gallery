@@ -1,1 +1,1 @@
-export { default as NFTGallery } from './App';
+export { default as OpenSeaNFTReactGallery } from './App';

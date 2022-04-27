@@ -17,11 +17,12 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "rootDir": "src"
   },
   "include": [
     "src"
-, "generateNFT.js"  ],
+  ],
   "exclude": [
     "public"
   ]

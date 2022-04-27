@@ -1,12 +1,12 @@
 {
-  "name": "gallery",
-  "version": "1.0.0",
-  "description": "NFT Gallery with filtering, sorting and other features.",
+  "name": "opensea-nft-react-gallery",
+  "version": "1.1.2",
+  "description": "Opensea NFT React Gallery with filtering, sorting and other features.",
   "scripts": {
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "generate": "node scripts/generateNFT.js"
+    "publish": "rollup -c && npm publish "
   },
   "author": "Rafael Segat",
   "license": "ISC",
@@ -24,14 +24,17 @@
     "@storybook/react": "^6.4.20",
     "@storybook/testing-library": "0.0.9",
     "@types/react": "^17.0.43",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "babel-loader": "^8.2.4",
     "css-loader": "^5.2.7",
     "eslint": "^8.12.0",
     "prettier": "^2.6.2",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
     "rollup": "^2.70.1",
     "rollup-plugin-dts": "^4.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.49.11",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
@@ -46,6 +49,11 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "classnames": "^2.3.1",
-    "node-fetch": "^2.0.0"
+    "react-animated-numbers": "^0.11.0",
+    "react-intersection-observer-hook": "^2.0.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

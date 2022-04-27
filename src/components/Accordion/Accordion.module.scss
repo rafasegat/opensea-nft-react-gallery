@@ -1,8 +1,8 @@
-
+@import '../../assets/styles/variables.scss';
 
 .accordion {
-  border-bottom: 1px solid #0000001a;
-  border-top: 1px solid #0000001a;
+  border-bottom: 1px solid $grey100;
+  border-top: 1px solid $grey100;
 }
 
 .accordion-title {
@@ -11,7 +11,7 @@
 }
 
 .count {
-  background: #e5e5e5;
+  background: $grey100;
   border-radius: 10px;
   margin-left: 5px;
   font-style: italic;
@@ -21,6 +21,7 @@
   display: flex;
   justify-content: space-between;
   padding: 15px;
+  font-size: 1rem;
   background: none;
   width: 100%;
   box-shadow: none;
@@ -31,17 +32,18 @@
   letter-spacing: 1px;
   font-weight: bold;
   &:hover {
-    background: #0000001a
+    background: $grey100;
   }
 }
 
 .expandable-element {
-  padding: 0 12px;
+  padding: 0 0.75rem;
 }
 
 .is-expanded {
   .expandable-element {
     display: block;
+    padding-bottom: 1rem;
   }
 }
 
