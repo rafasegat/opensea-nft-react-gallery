@@ -12,16 +12,11 @@ export interface AppProps {
   url: string;
 }
 
-// Generate this list and copy/paste into
-// the file public/assets/data/nft-collection.json
-import { generateListNFTs } from '../../generateListNFTs';
-generateListNFTs();
-
-const App = ({ url }: AppProps) => {
+const App = (props: AppProps) => {
   const { globalState, globalDispatch } = useGlobalContext();
   const { isLoading } = globalState;
   const { status, result: collection } = useFetchNFTCollection();
-
+  console.log(props);
   useEffect(() => {
     if (status === 'done' && isLoading)
       globalDispatch({
@@ -37,9 +32,11 @@ const App = ({ url }: AppProps) => {
   );
 };
 
-// const AppWrapped = ({ url }: AppProps) => (
-const AppWrapped = () => (
-  <GlobalProvider>{<App url="fvdfvdfvdfvd" />}</GlobalProvider>
+const AppWrapped = (props: any) => (
+  <GlobalProvider>
+    csdcds
+    <App {...props} />
+  </GlobalProvider>
 );
 
 export default AppWrapped;

@@ -1,4 +1,4 @@
 /// <reference types="react" />
-declare const AppWrapped: () => JSX.Element;
+declare const AppWrapped: (props: any) => JSX.Element;
 
 export { AppWrapped as OpenSeaNFTReactGallery };

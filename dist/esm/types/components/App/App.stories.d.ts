@@ -1,6 +1,6 @@
 /// <reference types="react" />
 declare const _default: {
-    component: () => JSX.Element;
+    component: (props: any) => JSX.Element;
     title: string;
 };
 export default _default;
