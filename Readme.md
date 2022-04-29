@@ -1,4 +1,4 @@
-# NFT Gallery
+# OpenSea NFT React Gallery
 
 The goal of this project is to allow user insert a NFT name and automatically display a gallery with cool features such as filtering by traits, sorting by categories, etc,
 
