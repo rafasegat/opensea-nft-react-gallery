@@ -4,9 +4,13 @@ The goal of this project is to allow user insert a NFT name and automatically di
 
 ## How to use
 
-First of all, your need to generate dataset json file to fetch NFT collection.
+First of all, you need to generate metadata json file to fetch NFT collection. You can generate it here: https://opensea-nft-json-generator-frontend.vercel.app/
+
+Copy and host this file in any directory in the cloud and copy the URL path, you will need it to send as `collection-metadata-url={your_url}`
 
 OpenSea API do not allow to retrieve more than 50 assets per request, so we will need to have a JSON file.
+
+## Installation
 
 `npm install opensea-nft-react-gallery`
 
@@ -14,7 +18,7 @@ OpenSea API do not allow to retrieve more than 50 assets per request, so we will
 import { OpenSeaNFTReactGallery } from "opensea-nft-react-gallery";
 
 function Example() {
-  return <OpenSeaNFTReactGallery collection-data-url="https://yourwebsite.com/my-collection.json" />
+  return <OpenSeaNFTReactGallery collection-metadata-url="https://yourwebsite.com/my-collection.json" />
 }
 ```
 
