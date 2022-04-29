@@ -9,20 +9,26 @@ import '../../assets/styles/global.scss';
 import styles from './App.module.scss';
 
 export interface AppProps {
-  url: string;
+  collectionMetadataUrl: string;
 }
 
-const App = (props: AppProps) => {
+const App = ({ collectionMetadataUrl }: AppProps) => {
   const { globalState, globalDispatch } = useGlobalContext();
   const { isLoading } = globalState;
-  const { status, result: collection } = useFetchNFTCollection();
-  console.log(props);
+  const { status, result: collection } = useFetchNFTCollection(
+    collectionMetadataUrl
+  );
+
   useEffect(() => {
     if (status === 'done' && isLoading)
       globalDispatch({
         isLoading: false
       });
   }, [status, isLoading]);
+
+  if (status === 'error') {
+    <div>Something went wrong. Check your URL.</div>;
+  }
 
   return (
     <div className={styles.component}>
@@ -32,11 +38,22 @@ const App = (props: AppProps) => {
   );
 };
 
-const AppWrapped = (props: any) => (
-  <GlobalProvider>
-    csdcds
-    <App {...props} />
-  </GlobalProvider>
-);
+const AppWrapped = ({ collectionMetadataUrl }: AppProps) =>
+  collectionMetadataUrl ? (
+    <GlobalProvider>
+      <App collectionMetadataUrl={collectionMetadataUrl} />
+    </GlobalProvider>
+  ) : (
+    <div>
+      Please, provide a Collection Metadata URL. You can generate it{' '}
+      <a
+        href="https://opensea-nft-json-generator-frontend.vercel.app/"
+        target="_blank"
+      >
+        here
+      </a>
+      .
+    </div>
+  );
 
 export default AppWrapped;

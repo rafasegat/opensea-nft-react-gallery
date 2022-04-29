@@ -15,7 +15,10 @@ const FiltersSelectionRemoval = () => {
             const parsed = JSON.parse(value);
             const labelF = `${parsed.trait_type}: ${[parsed.value]} `;
             return (
-              <li className={styles['list-item']}>
+              <li
+                key={`filter-selection-removal-list-${labelF}`}
+                className={styles['list-item']}
+              >
                 <button
                   type="button"
                   className={styles['btn-item']}
@@ -28,8 +31,8 @@ const FiltersSelectionRemoval = () => {
                   <span>{labelF}</span>
                   <svg stroke="currentColor" fill="none" viewBox="0 0 8 8">
                     <path
-                      stroke-linecap="round"
-                      stroke-width="1.5"
+                      strokeLinecap="round"
+                      strokeWidth="1.5"
                       d="M1 1l6 6m0-6L1 7"
                     ></path>
                   </svg>
