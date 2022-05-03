@@ -1,3 +1,5 @@
+@import '../../assets/styles/variables.scss';
+
 .component {
   padding: 0;
 }
@@ -16,11 +18,15 @@
 
 .label {
   display: block;
+  width: 100%;
   cursor: pointer;
   font-size: 0.75rem;
   text-transform: uppercase;
   span {
     margin-left: 5px;
+  }
+  &:hover {
+    background: $grey100;
   }
 }
 

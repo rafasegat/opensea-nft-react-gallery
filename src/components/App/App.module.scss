@@ -1,6 +1,8 @@
 .component {
+  width: 100%;
+  min-height: 110vh;
   display: flex;
-  flex-direction: row;
+  // flex-direction: row;
 }
 
 @media only screen and (max-width: 765px) {

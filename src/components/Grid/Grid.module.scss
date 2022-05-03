@@ -1,8 +1,10 @@
 @import "../../assets/styles/variables.scss";
 
 .component {
-  width: 75%;
-  margin-left: 1.25rem;
+  margin-left: 1rem;
+  width: calc(100vw - 280px - 4rem);
+  // width: 75%;
+  // margin-left: 1.25rem;
 }
 
 .header {
@@ -36,6 +38,7 @@
 .title-divider {
   margin: 0 0.75rem;
   font-size: 2rem;
+  line-height: 2.5rem;
   opacity: .4;
 }
 
